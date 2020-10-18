@@ -1,9 +1,8 @@
 {
-	"containerRegistry": "devcon.azurecr.io",
+	"containerRegistry": "registry.mxcao.me",
 	"containerRegistryPath": "public/vscode/devcontainers",
-	"stubRegistry": "mcr.microsoft.com",
+	"stubRegistry": "registry.mxcao.me",
 	"stubRegistryPath": "vscode/devcontainers",
-
 	"filesToStage": [
 		"+(containers|repository-containers)/**/!(test-project)/*",
 		"LICENSE",
@@ -11,22 +10,18 @@
 		"yarn.lock",
 		".npmignore"
 	],
-	
-	"needsDedicatedPage": [ 
-		"codespaces-linux" 
+	"needsDedicatedPage": [
+		"codespaces-linux"
 	],
-
 	"flattenBaseImage": [
-		"codespaces-linux" 
+		"codespaces-linux"
 	],
-
-	"githubRepoName": "microsoft/vscode-dev-containers",
+	"githubRepoName": "mcao2/vscode-dev-containers",
 	"containersPathInRepo": "containers",
 	"repoContainersToBuildPath": "repository-containers/images",
 	"scriptLibraryPathInRepo": "script-library",
 	"scriptLibraryFolderNameInDefinition": "library-scripts",
 	"definitionBuildConfigFile": "definition-manifest.json",
-
 	"devContainerJsonPreamble": "For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:\n// ",
 	"dockerFilePreamble": "See here for image contents: "
 }
