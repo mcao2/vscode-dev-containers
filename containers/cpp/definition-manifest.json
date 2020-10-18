@@ -1,5 +1,5 @@
 {
-	"variants": ["buster", "stretch"],
+	"variants": ["bionic"],
 	"build": {
 		"latest": true,
 		"parent": "debian",

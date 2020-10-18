@@ -1,22 +1,17 @@
 {
 	"variants": [
-		"focal",
 		"bionic"
 	],
 	"build": {
+		"latest": true,
+		"parent": "debian",
 		"rootDistro": "debian",
 		"tags": [
-			"base:${VERSION}-${VARIANT}"
+			"cpp:${VERSION}-${VARIANT}"
 		],
 		"variantTags": {
-			"focal": [
-				"base:${VERSION}-ubuntu-20.04",
-				"base:${VERSION}-ubuntu20.04",
-				"base:${VERSION}-ubuntu"
-			],
 			"bionic": [
-				"base:${VERSION}-ubuntu-18.04",
-				"base:${VERSION}-ubuntu18.04"
+				"cpp:${VERSION}-ubuntu-18.04"
 			]
 		}
 	},
@@ -59,11 +54,17 @@
 			"sudo",
 			"ncdu",
 			"man-db",
-			"zsh"
+			"zsh",
+			"build-essential",
+			"cmake",
+			"cppcheck",
+			"valgrind",
+			"lldb",
+			"llvm",
+			"clang"
 		],
 		"git": {
-			"Oh My Zsh!": "/root/.oh-my-zsh",
-			"nvm": "/usr/local/share/nvm"
+			"Oh My Zsh!": "/root/.oh-my-zsh"
 		}
 	}
 }
