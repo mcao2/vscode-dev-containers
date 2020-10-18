@@ -15,7 +15,27 @@
 	],
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
-		"terminal.integrated.shell.linux": "/bin/bash"
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"clang-format.executable": "clang-format-8",
+		"extensions.autoUpdate": false,
+		"C_Cpp.clang_format_style": "file",
+		"C_Cpp.clang_format_fallbackStyle": "Google",
+		"[cpp]": {
+			"editor.defaultFormatter": "xaver.clang-format"
+		},
+		"clang-format.fallbackStyle": "Google",
+		"editor.renderWhitespace": "all",
+		"editor.fontSize": 14,
+		"editor.formatOnSave": true,
+		"editor.tabSize": 2,
+		"[git-commit]": {
+			"editor.rulers": [
+				72
+			],
+			"editor.wordWrapColumn": 72,
+			"editor.wordWrap": "wordWrapColumn",
+			"editor.wrappingIndent": "same"
+		},
 	},
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
