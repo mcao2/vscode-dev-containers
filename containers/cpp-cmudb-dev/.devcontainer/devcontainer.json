@@ -36,6 +36,7 @@
 			"editor.wordWrap": "wordWrapColumn",
 			"editor.wrappingIndent": "same"
 		},
+		"cpplint.cpplintPath": "/usr/local/bin/cpplint",
 	},
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
