@@ -2,8 +2,12 @@
 ARG VARIANT=bionic
 FROM registry.mxcao.me/vscode/devcontainers/base:${VARIANT}
 
+ARG DEBIAN_FRONTEND=noninteractive
+ENV TZ=US/Eastern
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 # Install needed packages. Use a separate RUN statement to add your own dependencies.
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && \
+RUN apt-get update && \
     apt-get -y install build-essential \
     cmake \
     cppcheck \
@@ -30,6 +34,13 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && \
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/*
 
-# [Optional] Uncomment this section to install additional packages.
-# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-#     && apt-get -y install --no-install-recommends <your-package-list-here>
+# https://stackoverflow.com/a/48672750/4548096
+RUN ln -sf $(find /usr/lib -name perf | grep generic/perf) /usr/bin/perf
+
+# Generate and update locale
+RUN locale-gen en_US.UTF-8 && \
+    update-locale LANG=en_US.UTF-8
+ENV LANG en_US.UTF-8
+
+# Allow no password sudo access for sudo group
+RUN sed -i /etc/sudoers -re 's/^%sudo.*/%sudo ALL=(ALL:ALL) NOPASSWD: ALL/g'
