@@ -1,6 +1,6 @@
 # [Choice] Go version: 1, 1.15, 1.14
-ARG VARIANT=1
-FROM mcr.microsoft.com/vscode/devcontainers/go:${VARIANT}
+ARG VARIANT=1.15
+FROM registry.mxcao.me/public/vscode/devcontainers/go:dev-${VARIANT}
 
 # [Option] Install Node.js
 ARG INSTALL_NODE="true"
